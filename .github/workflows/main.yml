@@ -39,6 +39,6 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/flask-cicd-demo:latest
 
-      - name: Deploy to Minikube
-        run: |
-          kubectl apply -f k8s/deployment.yml
+      - name: Skip Kubernetes Deployment 
+        run: echo "Skipping deployment as Minikube is local and not accessible from GitHub Actions."
+          
